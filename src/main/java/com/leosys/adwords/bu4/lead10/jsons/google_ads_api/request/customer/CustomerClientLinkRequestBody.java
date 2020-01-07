@@ -1,0 +1,19 @@
+package com.leosys.adwords.bu4.lead10.jsons.google_ads_api.request.customer;
+
+import java.util.Set;
+
+public class CustomerClientLinkRequestBody {
+	
+	private Set<String> statuses;
+	
+	public CustomerClientLinkRequestBody() {
+	}
+
+	public Set<String> getStatuses() {
+		return statuses;
+	}
+
+	public void setStatuses(Set<String> statuses) {
+		this.statuses = statuses;
+	}
+}
