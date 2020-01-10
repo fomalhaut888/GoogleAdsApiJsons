@@ -8,6 +8,11 @@ public class OrderBy{
 	
 	public OrderBy() {
 	}
+	
+	public OrderBy(String field, Boolean desc) {
+			this.field = field;
+			this.desc = desc;
+	}
 
 	public String getField() {
 		return field;
