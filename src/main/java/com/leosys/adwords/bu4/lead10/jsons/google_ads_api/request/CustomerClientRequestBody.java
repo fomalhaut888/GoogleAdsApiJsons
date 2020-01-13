@@ -1,4 +1,4 @@
-package com.leosys.adwords.bu4.lead10.jsons.google_ads_api.request.customer;
+package com.leosys.adwords.bu4.lead10.jsons.google_ads_api.request;
 
 import java.util.List;
 
