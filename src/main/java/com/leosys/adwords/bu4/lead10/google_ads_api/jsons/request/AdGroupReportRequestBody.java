@@ -1,9 +1,9 @@
-package com.leosys.adwords.bu4.lead10.jsons.google_ads_api.request;
+package com.leosys.adwords.bu4.lead10.google_ads_api.jsons.request;
 
 import java.util.List;
 import java.util.Set;
 
-import com.leosys.adwords.bu4.lead10.jsons.google_ads_api.request.ReportRequestBody;
+import com.leosys.adwords.bu4.lead10.google_ads_api.jsons.request.ReportRequestBody;
 import com.leosys.adwords.bu4.lead10.jsons.request.OrderBy;
 
 public class AdGroupReportRequestBody extends ReportRequestBody {
