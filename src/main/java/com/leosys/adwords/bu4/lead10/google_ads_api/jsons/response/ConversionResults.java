@@ -27,6 +27,203 @@ public interface ConversionResults {
 			}	
 	}
 	
+	public static class GeoActionNames extends IntResult{
+		
+			private List<GeoConversionActionName> geoConversionActionNames;
+			
+			public GeoActionNames() {}
+	
+			public GeoActionNames(int result, String description, 
+					List<GeoConversionActionName> geoConversionActionNames) {
+					super(result, description);
+					this.geoConversionActionNames = geoConversionActionNames;
+			}
+
+			public List<GeoConversionActionName> getGeoConversionActionNames() {
+				return geoConversionActionNames;
+			}
+
+			public void setGeoConversionActionNames(List<GeoConversionActionName> geoConversionActionNames) {
+				this.geoConversionActionNames = geoConversionActionNames;
+			}
+	}
+	
+	public static class UserLocationActionNames extends IntResult{
+		
+			private List<UserLocationConversionActionName> userLocationConversionActionNames;
+			
+			public UserLocationActionNames() {}
+	
+			public UserLocationActionNames(int result, String description, 
+					List<UserLocationConversionActionName> userLocationConversionActionNames) {
+					super(result, description);
+					this.userLocationConversionActionNames = userLocationConversionActionNames;
+			}
+
+			public List<UserLocationConversionActionName> getUserLocationConversionActionNames() {
+				return userLocationConversionActionNames;
+			}
+
+			public void setUserLocationConversionActionNames(
+					List<UserLocationConversionActionName> userLocationConversionActionNames) {
+				this.userLocationConversionActionNames = userLocationConversionActionNames;
+			}
+	}
+	
+	public static class UserLocationConversionActionName extends ConversionActionName{
+		
+			private long countryCriterionId;
+			
+			private boolean targetingLocation;
+			
+			private GeoTarget geoTarget;
+			
+			public UserLocationConversionActionName() {
+					super();
+			}
+			
+			public UserLocationConversionActionName(String conversionActionName, 
+					double conversions, double allConversions, long countryCriterionId, 
+					boolean targetingLocation, GeoTarget geoTarget) {
+					super(conversionActionName, conversions, allConversions);
+					this.countryCriterionId = countryCriterionId;
+					this.targetingLocation = targetingLocation;
+					this.geoTarget = geoTarget;
+			}
+	
+			public long getCountryCriterionId() {
+					return countryCriterionId;
+			}
+	
+			public void setCountryCriterionId(long countryCriterionId) {
+					this.countryCriterionId = countryCriterionId;
+			}
+			
+			public GeoTarget getGeoTarget() {
+					return geoTarget;
+			}
+	
+			public void setGeoTarget(GeoTarget geoTarget) {
+					this.geoTarget = geoTarget;
+			}
+			
+			public boolean isTargetingLocation() {
+					return targetingLocation;
+			}
+
+			public void setTargetingLocation(boolean targetingLocation) {
+					this.targetingLocation = targetingLocation;
+			}
+			
+			public static class GeoTarget{
+				
+					private String name;
+					
+					private String value;
+					
+					public GeoTarget() {
+					}
+					
+					public GeoTarget(String name, String value) {
+							this.name = name;
+							this.value = value;
+					}
+	
+					public String getName() {
+						return name;
+					}
+	
+					public void setName(String name) {
+						this.name = name;
+					}
+	
+					public String getValue() {
+						return value;
+					}
+	
+					public void setValue(String value) {
+						this.value = value;
+					}
+			}
+	}
+	
+	public static class GeoConversionActionName extends ConversionActionName{
+			
+			private long countryCriterionId;
+			
+			private String locationType;
+			
+			private GeoTarget geoTarget;
+			
+			public GeoConversionActionName() {
+					super();
+			}
+			
+			public GeoConversionActionName(String conversionActionName, 
+					double conversions, double allConversions, long countryCriterionId, 
+					String locationType, GeoTarget geoTarget) {
+					super(conversionActionName, conversions, allConversions);
+					this.countryCriterionId = countryCriterionId;
+					this.locationType = locationType;
+					this.geoTarget = geoTarget;
+			}
+
+			public long getCountryCriterionId() {
+					return countryCriterionId;
+			}
+
+			public void setCountryCriterionId(long countryCriterionId) {
+					this.countryCriterionId = countryCriterionId;
+			}
+			
+			public GeoTarget getGeoTarget() {
+					return geoTarget;
+			}
+
+			public void setGeoTarget(GeoTarget geoTarget) {
+					this.geoTarget = geoTarget;
+			}
+			
+			public String getLocationType() {
+					return locationType;
+			}
+
+			public void setLocationType(String locationType) {
+					this.locationType = locationType;
+			}
+			
+			public static class GeoTarget{
+				
+					private String name;
+					
+					private String value;
+					
+					public GeoTarget() {
+					}
+					
+					public GeoTarget(String name, String value) {
+							this.name = name;
+							this.value = value;
+					}
+
+					public String getName() {
+						return name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public String getValue() {
+						return value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+			}
+	}
+	
 	public static class ConversionActionName{
 		
 			private String conversionActionName;

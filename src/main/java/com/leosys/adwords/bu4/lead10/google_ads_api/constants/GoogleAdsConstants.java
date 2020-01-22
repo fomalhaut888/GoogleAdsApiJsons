@@ -6,10 +6,13 @@ public class GoogleAdsConstants {
 		
 			public static enum UserLocationView{
 					COUNTRY_CRITERION_ID(getTable()), RESOURCE_NAME(getTable()), TARGETING_LOCATION(getTable()),
-					CAMPAIGN_ID(Campaign.getTable(), Campaign.ID.getName()), 
-					CAMPAIGN_NAME(Campaign.getTable(), Campaign.NAME.getName()), 
-					CAMPAIGN_STATUS(Campaign.getTable(), Campaign.STATUS.getName()), 
-					CAMPAIGN_RESOURCE_NAME(Campaign.getTable(), Campaign.RESOURCE_NAME.getName());
+					CAMPAIGN_ID(Campaign.getTable(), Campaign.ID.getValue()), 
+					CAMPAIGN_NAME(Campaign.getTable(), Campaign.NAME.getValue()), 
+					CAMPAIGN_STATUS(Campaign.getTable(), Campaign.STATUS.getValue()), 
+					CAMPAIGN_RESOURCE_NAME(Campaign.getTable(), Campaign.RESOURCE_NAME.getValue()),
+					CUSTOMER_ID(Customer.getTable(), Customer.ID.getValue()),
+					CUSTOMER_DESCRIPTIVE_NAME(Customer.getTable(), Customer.DESCRIPTIVE_NAME.getValue()),
+					CUSTOMER_RESOURCE_NAME(Customer.getTable(), Customer.RESOURCE_NAME.getValue());
 				
 					private String schema;
 					
@@ -76,10 +79,13 @@ public class GoogleAdsConstants {
 		
 			public static enum GeographicView{
 					COUNTRY_CRITERION_ID(getTable()), LOCATION_TYPE(getTable()), RESOURCE_NAME(getTable()),
-					CAMPAIGN_ID(Campaign.getTable(), Campaign.ID.getName()), 
-					CAMPAIGN_NAME(Campaign.getTable(), Campaign.NAME.getName()), 
-					CAMPAIGN_STATUS(Campaign.getTable(), Campaign.STATUS.getName()), 
-					CAMPAIGN_RESOURCE_NAME(Campaign.getTable(), Campaign.RESOURCE_NAME.getName());
+					CAMPAIGN_ID(Campaign.getTable(), Campaign.ID.getValue()), 
+					CAMPAIGN_NAME(Campaign.getTable(), Campaign.NAME.getValue()), 
+					CAMPAIGN_STATUS(Campaign.getTable(), Campaign.STATUS.getValue()), 
+					CAMPAIGN_RESOURCE_NAME(Campaign.getTable(), Campaign.RESOURCE_NAME.getValue()),
+					CUSTOMER_ID(Customer.getTable(), Customer.ID.getValue()),
+					CUSTOMER_DESCRIPTIVE_NAME(Customer.getTable(), Customer.DESCRIPTIVE_NAME.getValue()),
+					CUSTOMER_RESOURCE_NAME(Customer.getTable(), Customer.RESOURCE_NAME.getValue());
 				
 					private String schema;
 					
@@ -195,10 +201,10 @@ public class GoogleAdsConstants {
 			public static enum AdGroup{
 					ID(AdGroup.getTable()), NAME(AdGroup.getTable()), STATUS(AdGroup.getTable()), 
 					RESOURCE_NAME(AdGroup.getTable()), 
-					CAMPAIGN_ID(Campaign.getTable(), Campaign.ID.getName()), 
-					CAMPAIGN_NAME(Campaign.getTable(), Campaign.NAME.getName()), 
-					CAMPAIGN_STATUS(Campaign.getTable(), Campaign.STATUS.getName()),
-					CAMPAIGN_RESOURCE_NAME(Campaign.getTable(), Campaign.RESOURCE_NAME.getName());
+					CAMPAIGN_ID(Campaign.getTable(), Campaign.ID.getValue()), 
+					CAMPAIGN_NAME(Campaign.getTable(), Campaign.NAME.getValue()), 
+					CAMPAIGN_STATUS(Campaign.getTable(), Campaign.STATUS.getValue()),
+					CAMPAIGN_RESOURCE_NAME(Campaign.getTable(), Campaign.RESOURCE_NAME.getValue());
 				
 					private String schema;
 					
