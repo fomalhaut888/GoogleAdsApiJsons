@@ -7,6 +7,23 @@ import com.leosys.adwords.bu4.lead10.jsons.response.IntResult;
 
 public interface CustomerResults {
 	
+	public static class AccountBudgets extends IntResult{
+			
+			private List<AccountBudget> accountBudgets;
+			
+			public AccountBudgets() {
+			}
+			
+			public AccountBudgets(int result, String description, List<AccountBudget> accountBudgets) {
+					super(result, description);
+					this.accountBudgets = accountBudgets;
+			}
+
+			public List<AccountBudget> getAccountBudgets() {
+					return accountBudgets;
+			}
+	}
+	
 	public static class Clients extends IntResult {
 		
 			private List<Map<String, Object>> customerClients;
@@ -368,6 +385,169 @@ public interface CustomerResults {
 	
 			public String getCurrencyCode() {
 				return currencyCode;
+			}
+	}
+	
+	public static class AccountBudget{
+		
+			private long id;
+			
+			private String name;
+			
+			private String notes;
+			
+			private String status;
+			
+			private String purchaseOrderNumber;
+			
+			private String billingSetup;
+			
+			private long amountServedMicros;
+			
+			private long totalAdjustmentsMicros;
+			
+			private long adjustedSpendingLimitMicros;
+			
+			private String adjustedSpendingLimitType;
+
+			private long approvedSpendingLimitMicros;
+			
+			private String approvedSpendingLimitType;
+			
+			private String approvedStartDateTime;
+			
+			private String approvedEndDateTime;
+			
+			private String approvedEndTimeType;
+			
+			private long proposedSpendingLimitMicros;
+			
+			private String proposedSpendingLimitType;
+			
+			private String proposedStartDateTime;
+			
+			private String proposedEndDateTime;
+			
+			private String proposedEndTimeType;
+			
+			private long customerId;
+			
+			public AccountBudget() {
+			}
+
+			public AccountBudget(long id, String name, String notes, String status, String purchaseOrderNumber,
+					String billingSetup, long amountServedMicros, long totalAdjustmentsMicros,
+					long adjustedSpendingLimitMicros, String adjustedSpendingLimitType,
+					long approvedSpendingLimitMicros, String approvedSpendingLimitType, String approvedStartDateTime,
+					String approvedEndDateTime, String approvedEndTimeType, long proposedSpendingLimitMicros,
+					String proposedSpendingLimitType, String proposedStartDateTime, String proposedEndDateTime,
+					String proposedEndTimeType, long customerId) {
+					super();
+					this.id = id;
+					this.name = name;
+					this.notes = notes;
+					this.status = status;
+					this.purchaseOrderNumber = purchaseOrderNumber;
+					this.billingSetup = billingSetup;
+					this.amountServedMicros = amountServedMicros;
+					this.totalAdjustmentsMicros = totalAdjustmentsMicros;
+					this.adjustedSpendingLimitMicros = adjustedSpendingLimitMicros;
+					this.adjustedSpendingLimitType = adjustedSpendingLimitType;
+					this.approvedSpendingLimitMicros = approvedSpendingLimitMicros;
+					this.approvedSpendingLimitType = approvedSpendingLimitType;
+					this.approvedStartDateTime = approvedStartDateTime;
+					this.approvedEndDateTime = approvedEndDateTime;
+					this.approvedEndTimeType = approvedEndTimeType;
+					this.proposedSpendingLimitMicros = proposedSpendingLimitMicros;
+					this.proposedSpendingLimitType = proposedSpendingLimitType;
+					this.proposedStartDateTime = proposedStartDateTime;
+					this.proposedEndDateTime = proposedEndDateTime;
+					this.proposedEndTimeType = proposedEndTimeType;
+					this.customerId = customerId;
+			}
+
+			public long getId() {
+				return id;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public String getNotes() {
+				return notes;
+			}
+
+			public String getStatus() {
+				return status;
+			}
+
+			public String getPurchaseOrderNumber() {
+				return purchaseOrderNumber;
+			}
+
+			public String getBillingSetup() {
+				return billingSetup;
+			}
+
+			public long getAmountServedMicros() {
+				return amountServedMicros;
+			}
+
+			public long getTotalAdjustmentsMicros() {
+				return totalAdjustmentsMicros;
+			}
+
+			public long getAdjustedSpendingLimitMicros() {
+				return adjustedSpendingLimitMicros;
+			}
+
+			public String getAdjustedSpendingLimitType() {
+				return adjustedSpendingLimitType;
+			}
+
+			public long getApprovedSpendingLimitMicros() {
+				return approvedSpendingLimitMicros;
+			}
+
+			public String getApprovedSpendingLimitType() {
+				return approvedSpendingLimitType;
+			}
+
+			public String getApprovedStartDateTime() {
+				return approvedStartDateTime;
+			}
+
+			public String getApprovedEndDateTime() {
+				return approvedEndDateTime;
+			}
+
+			public String getApprovedEndTimeType() {
+				return approvedEndTimeType;
+			}
+
+			public long getProposedSpendingLimitMicros() {
+				return proposedSpendingLimitMicros;
+			}
+
+			public String getProposedSpendingLimitType() {
+				return proposedSpendingLimitType;
+			}
+
+			public String getProposedStartDateTime() {
+				return proposedStartDateTime;
+			}
+
+			public String getProposedEndDateTime() {
+				return proposedEndDateTime;
+			}
+
+			public String getProposedEndTimeType() {
+				return proposedEndTimeType;
+			}
+
+			public long getCustomerId() {
+				return customerId;
 			}
 	}
 }

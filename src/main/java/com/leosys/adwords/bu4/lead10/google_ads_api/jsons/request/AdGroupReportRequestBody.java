@@ -10,6 +10,8 @@ public class AdGroupReportRequestBody extends ReportRequestBody {
 	
 	private Set<String> statuses;
 	
+	private Set<String> campaignStatuses;
+	
 	private List<OrderBy> orderBys;
 	
 	public AdGroupReportRequestBody() {
@@ -29,5 +31,13 @@ public class AdGroupReportRequestBody extends ReportRequestBody {
 
 	public void setOrderBys(List<OrderBy> orderBys) {
 		this.orderBys = orderBys;
+	}
+
+	public Set<String> getCampaignStatuses() {
+		return campaignStatuses;
+	}
+
+	public void setCampaignStatuses(Set<String> campaignStatuses) {
+		this.campaignStatuses = campaignStatuses;
 	}
 }

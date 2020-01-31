@@ -4,6 +4,156 @@ public class GoogleAdsConstants {
 	
 	public static class Fields{
 		
+			public static enum KeywordView{
+					RESOURCE_NAME, 
+					AD_GROUP_CRITERION_KEYWORD_TEXT(
+							AdGroupCriterion.KEYWORD_TEXT.getSchema(), AdGroupCriterion.KEYWORD_TEXT.getValue()), 
+					AD_GROUP_CRITERION_KEYWORD_MATCH_TYPE(
+							AdGroupCriterion.KEYWORD_MATCH_TYPE.getSchema(), AdGroupCriterion.KEYWORD_MATCH_TYPE.getValue()),
+					AD_GROUP_CRITERION_RESOURCE_NAME(
+							AdGroupCriterion.RESOURCE_NAME.getSchema(), AdGroupCriterion.RESOURCE_NAME.getValue()),
+					AD_GROUP_ID(AdGroup.ID.getSchema(), AdGroup.ID.getValue()), 
+					AD_GROUP_NAME(AdGroup.NAME.getSchema(), AdGroup.NAME.getValue()), 
+					AD_GROUP_STATUS(AdGroup.STATUS.getSchema(), AdGroup.STATUS.getValue()), 
+					AD_GROUP_RESOURCE_NAME(AdGroup.RESOURCE_NAME.getSchema(), AdGroup.RESOURCE_NAME.getValue()), 
+					CAMPAIGN_ID(Campaign.ID.getSchema(), Campaign.ID.getValue()), 
+					CAMPAIGN_NAME(Campaign.NAME.getSchema(), Campaign.NAME.getValue()), 
+					CAMPAIGN_STATUS(Campaign.STATUS.getSchema(), Campaign.STATUS.getValue()), 
+					CAMPAIGN_RESOURCE_NAME(Campaign.RESOURCE_NAME.getSchema(), Campaign.RESOURCE_NAME.getValue()),
+					CUSTOMER_ID(Customer.ID.getSchema(), Customer.ID.getValue()),
+					CUSTOMER_DESCRIPTIVE_NAME(Customer.DESCRIPTIVE_NAME.getSchema(), Customer.DESCRIPTIVE_NAME.getValue()),
+					CUSTOMER_RESOURCE_NAME(Customer.RESOURCE_NAME.getSchema(), Customer.RESOURCE_NAME.getValue());
+				
+					private String schema;
+					
+					private String value;
+					
+					private KeywordView(){
+							this.schema = getTable();
+							this.value = toString();
+					}
+					
+					private KeywordView(String schema, String value){
+							this.schema = schema;
+							this.value = value;
+					}
+					
+					public static String getTable() {
+							return "keyword_view";
+					}
+					
+					public String getName() {
+							return toString();
+					}
+					
+					public String getSchema() {
+							return schema;
+					}
+	
+					public String getValue() {
+							return value;
+					}
+					
+					@Override
+					public String toString() {
+							return super.toString().toLowerCase();
+					}
+					
+					public static boolean isName(String name) {
+							for(KeywordView kv: values()) {
+									if(kv.getName().equals(name)) {
+											return true;
+									}
+							}
+							return false;
+					}
+					
+					public static KeywordView getInstanceByName(String name) {
+							for(KeywordView kv: values()) {
+									if(kv.getName().equals(name)) {
+											return kv;
+									}
+							}
+							return null;
+					}
+					
+					public static KeywordView getInstanceByValue(String schema, String value) {
+							for(KeywordView kv: values()) {
+									if(kv.getSchema().equals(schema) && kv.getValue().equals(value)) {
+											return kv;
+									}
+							}
+							return null;
+					}
+			}
+		
+			public static enum AdGroupCriterion{
+					KEYWORD_TEXT("keyword.text"), KEYWORD_MATCH_TYPE("keyword.match_type"),
+					RESOURCE_NAME;
+				
+					private String schema;
+					
+					private String value;
+					
+					private AdGroupCriterion(){
+							this.schema = getTable();
+							this.value = toString();
+					}
+				
+					private AdGroupCriterion(String value){
+							this.schema = getTable();
+							this.value = value;
+					}
+				
+					public static String getTable() {
+							return "ad_group_criterion";
+					}
+					
+					public String getName() {
+							return toString();
+					}
+					
+					public String getSchema() {
+							return schema;
+					}
+	
+					public String getValue() {
+							return value;
+					}
+					
+					@Override
+					public String toString() {
+							return super.toString().toLowerCase();
+					}
+					
+					public static boolean isName(String name) {
+							for(AdGroupCriterion agc: values()) {
+									if(agc.getName().equals(name)) {
+											return true;
+									}
+							}
+							return false;
+					}
+					
+					public static AdGroupCriterion getInstanceByName(String name) {
+							for(AdGroupCriterion agc: values()) {
+									if(agc.getName().equals(name)) {
+											return agc;
+									}
+							}
+							return null;
+					}
+					
+					public static AdGroupCriterion getInstanceByValue(String schema, String value) {
+							for(AdGroupCriterion agc: values()) {
+									if(agc.getSchema().equals(schema) && agc.getValue().equals(value)) {
+											return agc;
+									}
+							}
+							return null;
+					}
+			}
+		
 			public static enum UserLocationView{
 					COUNTRY_CRITERION_ID(getTable()), RESOURCE_NAME(getTable()), TARGETING_LOCATION(getTable()),
 					CAMPAIGN_ID(Campaign.getTable(), Campaign.ID.getValue()), 
@@ -153,6 +303,15 @@ public class GoogleAdsConstants {
 			public static enum Customer{
 					ID, DESCRIPTIVE_NAME, MANAGER, RESOURCE_NAME;
 				
+					private String schema;
+					
+					private String value;
+				
+					private Customer() {
+							this.schema = getTable();
+							this.value = toString();
+					}
+				
 					public static String getTable() {
 							return "customer";
 					}
@@ -161,8 +320,12 @@ public class GoogleAdsConstants {
 							return toString();
 					}
 					
+					public String getSchema() {
+							return schema;
+					}
+					
 					public String getValue() {
-							return toString();
+							return value;
 					}
 					
 					@Override
@@ -188,9 +351,9 @@ public class GoogleAdsConstants {
 							return null;
 					}
 					
-					public static Customer getInstanceByValue(String value) {
+					public static Customer getInstanceByValue(String schema, String value) {
 							for(Customer c: values()) {
-									if(c.getValue().equals(value)) {
+									if(c.getSchema().equals(schema) && c.getValue().equals(value)) {
 											return c;
 									}
 							}
@@ -272,6 +435,15 @@ public class GoogleAdsConstants {
 			public static enum Campaign{
 					ID, NAME, STATUS, RESOURCE_NAME;
 				
+					private String schema;
+					
+					private String value;
+				
+					private Campaign() {
+							this.schema = getTable();
+							this.value = toString();
+					}
+				
 					public static String getTable() {
 							return "campaign";
 					}
@@ -280,8 +452,12 @@ public class GoogleAdsConstants {
 							return toString();
 					}
 					
+					public String getSchema() {
+							return schema;
+					}
+					
 					public String getValue() {
-							return toString();
+							return value;
 					}
 					
 					@Override
@@ -307,9 +483,9 @@ public class GoogleAdsConstants {
 							return null;
 					}
 					
-					public static Campaign getInstanceByValue(String value) {
+					public static Campaign getInstanceByValue(String schema, String value) {
 							for(Campaign c: values()) {
-									if(c.getValue().equals(value)) {
+									if(c.getSchema().equals(schema) && c.getValue().equals(value)) {
 											return c;
 									}
 							}
@@ -456,6 +632,82 @@ public class GoogleAdsConstants {
 							for(CustomerClient cc: values()) {
 									if(cc.getValue().equals(value)) {
 											return cc;
+									}
+							}
+							return null;
+					}
+			}
+			
+			public static enum AccountBudget{
+					ID(getTable()), RESOURCE_NAME(getTable()), NAME(getTable()), NOTES(getTable()), 
+					STATUS(getTable()), PURCHASE_ORDER_NUMBER(getTable()), BILLING_SETUP(getTable()),
+					AMOUNT_SERVED_MICROS(getTable()), TOTAL_ADJUSTMENTS_MICROS(getTable()),
+					ADJUSTED_SPENDING_LIMIT_MICROS(getTable()), ADJUSTED_SPENDING_LIMIT_TYPE(getTable()),
+					APPROVED_SPENDING_LIMIT_MICROS(getTable()), APPROVED_SPENDING_LIMIT_TYPE(getTable()), 
+					APPROVED_START_DATE_TIME(getTable()), APPROVED_END_DATE_TIME(getTable()), 
+					APPROVED_END_TIME_TYPE(getTable()), PROPOSED_SPENDING_LIMIT_MICROS(getTable()),
+					PROPOSED_SPENDING_LIMIT_TYPE(getTable()), PROPOSED_START_DATE_TIME(getTable()),
+					PROPOSED_END_DATE_TIME(getTable()), PROPOSED_END_TIME_TYPE(getTable()),
+					CUSTOMER_ID(Customer.getTable(), "id"), 
+					CUSTOMER_RESOURCE(Customer.getTable(), Customer.RESOURCE_NAME.getValue());
+				
+					private String schema;
+					
+					private String value;
+				
+					private AccountBudget(String schema) {
+							this.schema = schema;
+							this.value = this.toString();
+					}
+					
+					private AccountBudget(String schema, String value) {
+							this.schema = schema;
+							this.value = value;
+					}
+					
+					public static String getTable() {
+							return "account_budget";
+					}
+					
+					public String getName() {
+							return toString();
+					}
+					
+					public String getSchema() {
+							return schema;
+					}
+					
+					public String getValue() {
+							return value;
+					}
+					
+					@Override
+					public String toString() {
+							return super.toString().toLowerCase();
+					}
+					
+					public static boolean isName(String name) {
+							for(AccountBudget ab: values()) {
+									if(ab.getName().equals(name)) {
+											return true;
+									}
+							}
+							return false;
+					}
+					
+					public static AccountBudget getInstanceByName(String name) {
+							for(AccountBudget ab: values()) {
+									if(ab.getName().equals(name)) {
+											return ab;
+									}
+							}
+							return null;
+					}
+					
+					public static AccountBudget getInstanceByValue(String schema, String value) {
+							for(AccountBudget ab: values()) {
+									if(ab.getSchema().equals(schema) && ab.getValue().equals(value)) {
+											return ab;
 									}
 							}
 							return null;
