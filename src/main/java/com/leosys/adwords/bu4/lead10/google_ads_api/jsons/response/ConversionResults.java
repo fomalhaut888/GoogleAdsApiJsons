@@ -27,6 +27,60 @@ public interface ConversionResults {
 			}	
 	}
 	
+	public static class KeywordActionNames extends IntResult{
+		
+			private List<KeywordActionName> keywordActionNames;
+			
+			public KeywordActionNames() {}
+	
+			public KeywordActionNames(int result, String description, 
+					List<KeywordActionName> keywordActionNames) {
+					super(result, description);
+					this.keywordActionNames = keywordActionNames;
+			}
+
+			public List<KeywordActionName> getKeywordActionNames() {
+				return keywordActionNames;
+			}
+
+			public void setKeywordActionNames(List<KeywordActionName> keywordActionNames) {
+				this.keywordActionNames = keywordActionNames;
+			}
+	}
+	
+	public static class KeywordActionName extends ConversionActionName{
+			
+			private String text;
+			
+			private String matchType;
+			
+			public KeywordActionName() {
+			}
+
+			public KeywordActionName(String conversionActionName, 
+					double conversions, double allConversions, String text, String matchType) {
+					super(conversionActionName, conversions, allConversions);
+					this.text = text;
+					this.matchType = matchType;
+			}
+
+			public String getText() {
+				return text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
+
+			public String getMatchType() {
+				return matchType;
+			}
+
+			public void setMatchType(String matchType) {
+				this.matchType = matchType;
+			}
+	}
+	
 	public static class GeoActionNames extends IntResult{
 		
 			private List<GeoConversionActionName> geoConversionActionNames;
