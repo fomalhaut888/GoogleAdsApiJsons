@@ -29,4 +29,11 @@ public class OrderBy{
 	public void setDesc(Boolean desc) {
 		this.desc = desc;
 	}
+
+	@Override
+	public String toString() {
+			return super.toString() + "[" + this.field + " " + ((this.desc == null)?null: (this.desc? "desc": "asc")) + "]";
+	}
+	
+	
 }

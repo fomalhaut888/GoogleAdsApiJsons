@@ -1,10 +1,10 @@
 package com.leosys.adwords.bu4.lead10.google_ads_api.jsons.request;
 
-public class CampaignRequestBody {
+public class CampaignStatusRequestBody {
 
 	private String status;
 	
-	public CampaignRequestBody() {
+	public CampaignStatusRequestBody() {
 	}
 
 	public String getStatus() {

@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.leosys.adwords.bu4.lead10.jsons</groupId>
 	<artifactId>GoogleAdsApiJsons</artifactId>
-	<version>10.0.1</version>
+	<version>10.0.2</version>
 	<name>GoogleAdsApiJsons</name>
 	<description>Google Ads Api Jsons</description>
 	
