@@ -3,7 +3,6 @@ package com.leosys.adwords.bu4.lead10.google_ads_api.jsons.request;
 import java.util.List;
 import java.util.Set;
 
-import com.leosys.adwords.bu4.lead10.google_ads_api.jsons.request.ReportRequestBody;
 import com.leosys.adwords.bu4.lead10.jsons.request.OrderBy;
 
 public class CampaignReportRequestBody extends ReportRequestBody {
