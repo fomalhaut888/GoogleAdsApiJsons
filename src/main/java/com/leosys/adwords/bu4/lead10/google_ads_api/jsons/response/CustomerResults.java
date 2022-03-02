@@ -7,6 +7,23 @@ import com.leosys.adwords.bu4.lead10.jsons.response.IntResult;
 
 public interface CustomerResults {
 	
+	public static class ChangeEvents extends IntResult{
+			
+			private List<ChangeEvent> changeEvents;
+			
+			public ChangeEvents() {
+			}
+			
+			public ChangeEvents(int result, String description, List<ChangeEvent> changeEvents) {
+					super(result, description);
+					this.changeEvents = changeEvents;
+			}
+
+			public List<ChangeEvent> getChangeEvents() {
+					return changeEvents;
+			}
+	}
+	
 	public static class AccountBudgets extends IntResult{
 			
 			private List<AccountBudget> accountBudgets;
@@ -548,6 +565,30 @@ public interface CustomerResults {
 
 			public long getCustomerId() {
 				return customerId;
+			}
+	}
+	
+	public static class ChangeEvent{
+			
+			private String changeDateTime;
+			
+			private String userEmail;
+			
+			public ChangeEvent() {
+			}
+
+			public ChangeEvent(String changeDateTime, String userEmail) {
+					super();
+					this.changeDateTime = changeDateTime;
+					this.userEmail = userEmail;
+			}
+
+			public String getChangeDateTime() {
+					return changeDateTime;
+			}
+
+			public String getUserEmail() {
+					return userEmail;
 			}
 	}
 }
