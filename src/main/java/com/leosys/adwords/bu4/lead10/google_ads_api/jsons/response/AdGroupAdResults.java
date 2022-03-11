@@ -22,4 +22,20 @@ public interface AdGroupAdResults {
 					return disapprovedAds;
 			}
 	}
+	
+	public static class Reports extends IntResult {
+		
+			private List<Map<String, Object>> performances;
+			
+			public Reports() {}
+			
+			public Reports(int result, String description, List<Map<String, Object>> performances) {
+					super(result, description);
+					this.performances = performances;
+			}
+
+			public List<Map<String, Object>> getPerformances() {
+					return performances;
+			}
+	}
 }
