@@ -2,6 +2,7 @@ package com.leosys.adwords.bu4.lead10.google_ads_api.jsons.response;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.leosys.adwords.bu4.lead10.jsons.response.IntResult;
 
@@ -36,6 +37,22 @@ public interface AdGroupAdResults {
 
 			public List<Map<String, Object>> getPerformances() {
 					return performances;
+			}
+	}
+	
+	public static class AdTypes extends IntResult {
+		
+			private Set<String> adTypes;
+			
+			public AdTypes() {}
+			
+			public AdTypes(int result, String description, Set<String> adTypes) {
+					super(result, description);
+					this.adTypes = adTypes;
+			}
+
+			public Set<String> getAdTypes() {
+					return adTypes;
 			}
 	}
 }
