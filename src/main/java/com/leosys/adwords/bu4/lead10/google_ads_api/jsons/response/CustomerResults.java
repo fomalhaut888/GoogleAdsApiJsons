@@ -167,6 +167,8 @@ public interface CustomerResults {
 			
 			private boolean enabled = false;
 			
+			private String status;
+			
 			public Customer() {}
 			
 			public Customer(long cid) {
@@ -175,7 +177,7 @@ public interface CustomerResults {
 	
 			public Customer(long cid, String descriptiveName, String currencyCode, Boolean testAccount,
 					Boolean manager, String timeZone, Boolean hasPartnersBadge, String finalUrlSuffix,
-					Boolean autoTaggingEnabled, String trackingUrlTemplate, boolean enabled) {
+					Boolean autoTaggingEnabled, String trackingUrlTemplate, boolean enabled, String status) {
 					this.cid = cid;
 					this.descriptiveName = descriptiveName;
 					this.currencyCode = currencyCode;
@@ -187,6 +189,7 @@ public interface CustomerResults {
 					this.autoTaggingEnabled = autoTaggingEnabled;
 					this.trackingUrlTemplate = trackingUrlTemplate;
 					this.enabled = enabled;
+					this.status =status;
 			}
 	
 			public long getCid() {
@@ -231,6 +234,10 @@ public interface CustomerResults {
 
 			public boolean isEnabled() {
 				return enabled;
+			}
+
+			public String getStatus() {
+				return status;
 			}
 	}
 	
