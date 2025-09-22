@@ -2,6 +2,8 @@ package com.leosys.adwords.bu4.lead10.google_ads_api.jsons.response;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.leosys.adwords.bu4.lead10.jsons.response.IntResult;
 
 public interface ConversionResults {
@@ -278,9 +280,18 @@ public interface ConversionResults {
 			}
 	}
 	
+	@JsonInclude(Include.NON_NULL)
 	public static class ConversionActionName{
 		
 			private String conversionActionName;
+			
+			private String adNetworkType;
+			
+			private Long id;
+			
+			private String name;
+			
+			private String status;
 			
 			private double conversions;
 			
@@ -293,6 +304,26 @@ public interface ConversionResults {
 					double conversions, double allConversions) {
 					
 					this.conversionActionName = conversionActionName;
+					this.conversions = conversions;
+					this.allConversions = allConversions;
+			}
+			
+			public ConversionActionName(String conversionActionName, String adNetworkType,
+					double conversions, double allConversions) {
+					
+					this.conversionActionName = conversionActionName;
+					this.adNetworkType = adNetworkType;
+					this.conversions = conversions;
+					this.allConversions = allConversions;
+			}
+			
+			public ConversionActionName(String conversionActionName, Long id, String name,
+					String status, double conversions, double allConversions) {
+					
+					this.conversionActionName = conversionActionName;
+					this.id = id;
+					this.name = name;
+					this.status = status;
 					this.conversions = conversions;
 					this.allConversions = allConversions;
 			}
@@ -319,6 +350,38 @@ public interface ConversionResults {
 
 			public void setAllConversions(double allConversions) {
 				this.allConversions = allConversions;
+			}
+
+			public String getAdNetworkType() {
+				return adNetworkType;
+			}
+
+			public void setAdNetworkType(String adNetworkType) {
+				this.adNetworkType = adNetworkType;
+			}
+
+			public Long getId() {
+				return id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getStatus() {
+				return status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 	}
 }

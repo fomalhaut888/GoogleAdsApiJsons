@@ -31,6 +31,9 @@ public interface GeoResults {
 					super(result, description);
 					this.targetConstant = targetConstant;
 			}
+			
+			public TargetConstantResult() {
+			}
 
 			public TargetConstant getTargetConstant() {
 					return targetConstant;
@@ -63,6 +66,9 @@ public interface GeoResults {
 					this.countryCode = countryCode;
 					this.status = status;
 					this.targetType = targetType;
+			}
+			
+			public TargetConstant() {
 			}
 
 			public long getId() {
